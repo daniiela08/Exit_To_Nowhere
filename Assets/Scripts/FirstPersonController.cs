@@ -40,6 +40,13 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField]
     private LayerMask whatIsGround;
 
+    [Header("-----Pick & Drop-----")]
+    [SerializeField]
+    private Transform pickUpPosition;
+    [SerializeField]
+    private float interactDistance;
+    [SerializeField]
+    private float throwForce;
 
     private CharacterController controller;
     private Camera cam;
@@ -52,6 +59,8 @@ public class FirstPersonController : MonoBehaviour
     private PlayerInput playerInput;
     private Vector2 input;
 
+    private PickableObject pickUpObject;
+    private IInteractable currentInteractuable;
 
     private void Awake()
     {
@@ -67,18 +76,24 @@ public class FirstPersonController : MonoBehaviour
         playerInput.actions["Jump"].started += Jump;
         playerInput.actions["Move"].performed += Move;
         playerInput.actions["Move"].canceled += MoveCancelled;
+        //playerInput.actions["Crouch"].started += Crouch;
+        //playerInput.actions["Crouch"].canceled += CrouchCancelled;
+        playerInput.actions["PickUp"].started += PickUp;
+
+
         /*deshabilitar los controles del gameplay y activar los controles de la UI.
         playerInput.SwitchCurrentActionMap("UI");*/
 
         //si se desconecta el control que estes usando
         playerInput.deviceLostEvent.AddListener((x) => Time.timeScale = 0f);
     }
+
+
     void Update()
     {
         MoveAndRotate();
         ApplyGravity();
         ApplyHeadBob();
-        //Crouch();
     }
 
 
@@ -98,6 +113,25 @@ public class FirstPersonController : MonoBehaviour
             verticalMovement.y = Mathf.Sqrt(-2 * gravityScale * jumpHeight);
         }
     }
+    //private void Crouch(InputAction.CallbackContext ctx)
+    //{
+    //    transform.localScale /= 2;
+    //}
+    //private void CrouchCancelled(InputAction.CallbackContext ctx)
+    //{
+    //    transform.localScale *= 2;
+    //}
+    private void PickUp(InputAction.CallbackContext ctx)
+    {
+        if (pickUpObject == null)
+        {
+            Interact();
+        }
+        else
+        {
+            DropObject();
+        }
+    }
     private void ApplyHeadBob()
     {
         if (input.sqrMagnitude > 0 && IsGrounded()) // Solo si nos movemos y tocamos el suelo
@@ -114,18 +148,6 @@ public class FirstPersonController : MonoBehaviour
             headBobAnchor.localPosition = Vector3.Lerp(headBobAnchor.localPosition, originalHeadPosition, Time.deltaTime * 5f);
         }
     }
-
-    //private void Crouch()
-    //{
-    //    if(Input.GetKeyDown(KeyCode.LeftControl))
-    //    {
-    //        transform.localScale /= 2; //A la mitad TODO para que no deforme objetos.
-    //    }
-    //    else if(Input.GetKeyUp(KeyCode.LeftControl))
-    //    {
-    //        transform.localScale *= 2;
-    //    }
-    //}
 
     private void MoveAndRotate()
     {
@@ -145,7 +167,42 @@ public class FirstPersonController : MonoBehaviour
             controller.Move(movementInput * movementSpeed * Time.deltaTime);
         }
     }
-
+    private void Interact()
+    {
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, interactDistance))
+        {
+            if (hit.transform.TryGetComponent(out IInteractable interactable))
+            {
+                currentInteractuable = interactable;
+                interactable.Interact();
+            }
+            else
+            {
+                currentInteractuable = null;
+            }
+        }
+        else
+        {
+            currentInteractuable = null;
+        }
+    }
+    public void PickObject(PickableObject obj)
+    {
+        pickUpObject = obj;
+        pickUpObject.SetPhysics(false);
+        pickUpObject.transform.position = pickUpPosition.position;
+        pickUpObject.transform.SetParent(pickUpPosition);
+    }
+    private void DropObject()
+    {
+        if (pickUpObject != null)
+        {
+            pickUpObject.transform.SetParent(null);
+            pickUpObject.SetPhysics(true);
+            pickUpObject.GetComponent<Rigidbody>().AddForce(transform.forward * throwForce, ForceMode.Impulse);
+            pickUpObject = null;
+        }
+    }
     private void ApplyGravity()
     {
         verticalMovement.y += gravityScale * Time.deltaTime;
