@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 195da186e55c62343852cfd3b918c58f
+guid: 6fe72e1483475b048b5676e7662d3875
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,58 +7,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 1
-    second: {fileID: 2100000, guid: caf8fb6699275b94e848d470841a806d, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: c65b36bb430d3b240b185d97e24e7dca, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.001
-    second: {fileID: 2100000, guid: 88e537a15f382134ab5f3c86f056efaf, type: 2}
+    second: {fileID: 2100000, guid: 2cd0dd9f8564c1044bb294d30bf59684, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: grass_medium_02
-    second: {fileID: 2100000, guid: f80f1964b04c14748a06d0e640cc614c, type: 2}
+      name: Material.002
+    second: {fileID: 2100000, guid: ee75178200b29a8499f8375650d2a0ae, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: grass_medium_02_sphere
-    second: {fileID: 2100000, guid: 0ae4b7394ab176446835b9a7b4b33b7b, type: 2}
+      name: Material.003
+    second: {fileID: 2100000, guid: b35a568c001be6743aeb5defe0321330, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: sky
-    second: {fileID: 2100000, guid: c4e371ef6473b60459127481e7ce6938, type: 2}
+      name: Material.004
+    second: {fileID: 2100000, guid: a9c03350ba2559945b221d7f8ccd6611, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: "\u6750\u8D28"
-    second: {fileID: 2100000, guid: 553807871ad95904895cc8f1bcfa74ed, type: 2}
+      name: Material.005
+    second: {fileID: 2100000, guid: 3489acccb5a9b834fbf7fa3a09aeaec8, type: 2}
   - first:
-      type: UnityEngine:Texture2D
+      type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Grass001_1K-JPG_Color
-    second: {fileID: 2800000, guid: 84fd154fdca5de14fb2aa15a76b6d463, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Grass001_1K-JPG_NormalGL
-    second: {fileID: 2800000, guid: e4184447aab5b8342a43351176515a3c, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: cloud
-    second: {fileID: 2800000, guid: 420178d1e7ca37a43904a1924fa5e116, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: grass
-    second: {fileID: 2800000, guid: 9305322e2fd34c64fb554469175793f5, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: grass_medium_01_diff_2k
-    second: {fileID: 2800000, guid: 4eb7c31fe57ce734dafdf4d886facd85, type: 3}
+      name: Material.006
+    second: {fileID: 2100000, guid: a18727bc45d9d3b4fa646a95ca4114da, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
