@@ -972,12 +972,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &851563898 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2734381963057064472, guid: ee271b9d4a369a04a9ce929059f39ead,
-    type: 3}
-  m_PrefabInstance: {fileID: 1872871503}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &896693857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,11 +1423,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFirstPerson
       objectReference: {fileID: 0}
-    - target: {fileID: 1219616110540842806, guid: ee271b9d4a369a04a9ce929059f39ead,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 5411980003564128369, guid: ee271b9d4a369a04a9ce929059f39ead,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1483,46 +1472,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6700706132717561031, guid: ee271b9d4a369a04a9ce929059f39ead,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081082332602259471, guid: ee271b9d4a369a04a9ce929059f39ead,
-        type: 3}
-      propertyPath: throwForce
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081082332602259471, guid: ee271b9d4a369a04a9ce929059f39ead,
-        type: 3}
-      propertyPath: originalScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081082332602259471, guid: ee271b9d4a369a04a9ce929059f39ead,
-        type: 3}
-      propertyPath: pickUpPosition
-      value: 
-      objectReference: {fileID: 851563898}
-    - target: {fileID: 8081082332602259471, guid: ee271b9d4a369a04a9ce929059f39ead,
-        type: 3}
-      propertyPath: interactDistance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081082332602259471, guid: ee271b9d4a369a04a9ce929059f39ead,
-        type: 3}
-      propertyPath: scaleWhenCrouched
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081082332602259471, guid: ee271b9d4a369a04a9ce929059f39ead,
-        type: 3}
-      propertyPath: whatIsGround.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8967270824427510036, guid: ee271b9d4a369a04a9ce929059f39ead,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.69499993
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
