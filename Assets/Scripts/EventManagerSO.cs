@@ -11,6 +11,10 @@ public class EventManagerSO : ScriptableObject
 
     public Action<SubtitleDataSO.SubtitleEntry> OnSubtitleTriggered;
 
+    public event Action OnBuildAreaEntered;
+    public event Action OnBuildAreaExited;
+    public event Action OnStaircaseBuilt;
+
     public void NewInteractable()
     {
         OnNewInteractable?.Invoke();
@@ -23,4 +27,8 @@ public class EventManagerSO : ScriptableObject
     {
         OnSubtitleTriggered?.Invoke(subtitleData);
     }
+
+    public void EnterBuildArea() => OnBuildAreaEntered?.Invoke();
+    public void ExitBuildArea() => OnBuildAreaExited?.Invoke();
+    public void StaircaseBuilt() => OnStaircaseBuilt?.Invoke();
 }

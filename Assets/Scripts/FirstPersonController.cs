@@ -88,14 +88,12 @@ public class FirstPersonController : MonoBehaviour
         playerInput.deviceLostEvent.AddListener((x) => Time.timeScale = 0f);
     }
 
-
     void Update()
     {
         MoveAndRotate();
         ApplyGravity();
         ApplyHeadBob();
     }
-
 
     private void Move(InputAction.CallbackContext ctx)
     {
@@ -212,7 +210,6 @@ public class FirstPersonController : MonoBehaviour
     {
         return Physics.CheckSphere(feet.position, detectionRadius, whatIsGround);
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(feet.position, detectionRadius);
