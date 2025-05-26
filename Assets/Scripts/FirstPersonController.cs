@@ -48,6 +48,10 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField]
     private float throwForce;
 
+    [Header("-----Detect-----")]
+    [SerializeField] private EventManagerSO eventManager;
+    private GameObject lastDetectedObject;
+
     private CharacterController controller;
     private Camera cam;
 
@@ -93,7 +97,9 @@ public class FirstPersonController : MonoBehaviour
         MoveAndRotate();
         ApplyGravity();
         ApplyHeadBob();
+        DetectInteractableOrBuildable();
     }
+
 
     private void Move(InputAction.CallbackContext ctx)
     {
@@ -163,6 +169,36 @@ public class FirstPersonController : MonoBehaviour
 
             //Se aplica movimiento en dicha dirección.
             controller.Move(movementInput * movementSpeed * Time.deltaTime);
+        }
+    }
+    private void DetectInteractableOrBuildable()
+    {
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, interactDistance))
+        {
+            GameObject hitObj = hit.transform.gameObject;
+
+            // Solo disparamos evento si cambia el objeto detectado
+            if (hitObj != lastDetectedObject)
+            {
+                lastDetectedObject = hitObj;
+
+                bool isInteractable = hitObj.GetComponent<IInteractable>() != null;
+                bool isBuildable = hitObj.GetComponent<IBuild>() != null;
+
+                if (isInteractable || isBuildable)
+                {
+                    eventManager.NewInteractable();
+                }
+                else
+                {
+                    eventManager.NoInteractable();
+                }
+            }
+        }
+        else if (lastDetectedObject != null)
+        {
+            lastDetectedObject = null;
+            eventManager.NoInteractable();
         }
     }
     private void Interact()
