@@ -13842,7 +13842,7 @@ MonoBehaviour:
   wallRight: {fileID: 1511695422}
   wallFront: {fileID: 1581065794}
   wallBack: {fileID: 2020225366}
-  wallMoveStep: 0.5
+  wallMoveStep: 2.5
   minDistanceBetweenWalls: 1
   eventManager: {fileID: 11400000, guid: 35000611a66fd8e4cb4f47f94eb5a2ab, type: 2}
   teleportPortal: {fileID: 1165552549}
