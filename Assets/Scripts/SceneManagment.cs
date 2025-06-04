@@ -7,6 +7,7 @@ public class SceneManagment : MonoBehaviour
 {
     [SerializeField] private GameObject menuPrincipal;
     [SerializeField] private GameObject menuNiveles;
+    [SerializeField] private GameObject menuopciones;
     [SerializeField] private GameObject lvl1;
     [SerializeField] private GameObject lvl2;
     [SerializeField] private GameObject lvl3;
@@ -27,6 +28,20 @@ public class SceneManagment : MonoBehaviour
     {
         menuPrincipal.SetActive(true);
         menuNiveles.SetActive(false);
+        menuopciones.SetActive(false);
+        lvl1.SetActive(false);
+        lvl2.SetActive(false);
+        lvl3.SetActive(false);
+        lvl4.SetActive(false);
+        lvl5.SetActive(false);
+        lvl6.SetActive(false);
+        lvl7.SetActive(false);
+    }
+    public void MenuOpciones()
+    {
+        menuPrincipal.SetActive(false);
+        menuNiveles.SetActive(false);
+        menuopciones.SetActive(true);
         lvl1.SetActive(false);
         lvl2.SetActive(false);
         lvl3.SetActive(false);
@@ -39,6 +54,7 @@ public class SceneManagment : MonoBehaviour
     {
         menuPrincipal.SetActive(false);
         menuNiveles.SetActive(true);
+        menuopciones.SetActive(false);
     }
     public void Lvl1()
     {
