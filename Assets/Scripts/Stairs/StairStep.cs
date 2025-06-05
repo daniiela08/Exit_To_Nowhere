@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StairStep : PickableObject, IBuild, IInteractable
 {
+
     public void OnPlaced()
     {
         StairManager.Instance.PlaceStep(this);

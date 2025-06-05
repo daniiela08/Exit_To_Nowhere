@@ -52,6 +52,10 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private EventManagerSO eventManager;
     private GameObject lastDetectedObject;
 
+    [Header("-----Audio-----")]
+    [SerializeField] AudioManager audioManager;
+    public AudioClip[] sonidos;
+
     private CharacterController controller;
     private Camera cam;
 
@@ -99,7 +103,6 @@ public class FirstPersonController : MonoBehaviour
         ApplyHeadBob();
         DetectInteractableOrBuildable();
     }
-
 
     private void Move(InputAction.CallbackContext ctx)
     {
@@ -222,6 +225,7 @@ public class FirstPersonController : MonoBehaviour
     }
     public void PickObject(PickableObject obj)
     {
+        audioManager.ReproducirSFX(sonidos[0]);
         pickUpObject = obj;
         pickUpObject.SetPhysics(false);
         pickUpObject.transform.position = pickUpPosition.position;
@@ -231,6 +235,7 @@ public class FirstPersonController : MonoBehaviour
     {
         if (pickUpObject != null)
         {
+            audioManager.ReproducirSFX(sonidos[1]);
             pickUpObject.transform.SetParent(null);
             pickUpObject.SetPhysics(true);
             pickUpObject.GetComponent<Rigidbody>().AddForce(transform.forward * throwForce, ForceMode.Impulse);

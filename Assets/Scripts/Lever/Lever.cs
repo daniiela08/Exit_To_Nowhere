@@ -8,14 +8,19 @@ public class Lever : MonoBehaviour, IInteractable
     [SerializeField] private int palancaID; // El índice en el orden correcto
     [SerializeField] private Animator animator;
 
+    [Header("-----Audio-----")]
+    [SerializeField] AudioManager audioManager;
+    public AudioClip[] sonidos;
+
     public static event Action<int> OnPalancaActivada;
 
     private bool activada = false;
     private bool isReseting = false;
     public void Interact()
     {
-        if (activada) return; 
+        if (activada) return;
 
+        audioManager.ReproducirSFX(sonidos[0]);
         activada = true;
         animator.SetTrigger("Activar");
         OnPalancaActivada?.Invoke(palancaID);
