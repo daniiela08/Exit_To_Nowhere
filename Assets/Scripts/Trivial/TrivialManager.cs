@@ -21,6 +21,10 @@ public class TrivialManager : MonoBehaviour
     [SerializeField] private EventManagerSO eventManager;
     [SerializeField] private GameObject teleportPortal;
 
+    [Header("-----Audio-----")]
+    [SerializeField] AudioManager audioManager;
+    public AudioClip[] sonidos;
+
     public static Action<QuestionSO> OnQuestionLoaded;
 
     private int currentQuestionIndex = 0;
@@ -56,10 +60,12 @@ public class TrivialManager : MonoBehaviour
         QuestionSO current = questionSet.questions[currentQuestionIndex];
         if (answerIndex == current.correctIndex)
         {
+            audioManager.ReproducirSFX(sonidos[0]);
             Debug.Log("Respuesta Correcta");
         }
         else
         {
+            audioManager.ReproducirSFX(sonidos[1]);
             Debug.Log("Respuesta Incorrecta");
             mistakes++;
             CloseWalls();
@@ -71,10 +77,13 @@ public class TrivialManager : MonoBehaviour
 
     private void CloseWalls()
     {
-        wallLeft.position += Vector3.right * wallMoveStep;
-        wallRight.position += Vector3.left * wallMoveStep;
-        wallFront.position += Vector3.back * wallMoveStep;
-        wallBack.position += Vector3.forward * wallMoveStep;
+        Vector3 center = GetCenterPoint();
+
+        // Mueve cada pared hacia el centro
+        MoveWallTowards(wallLeft, center);
+        MoveWallTowards(wallRight, center);
+        MoveWallTowards(wallFront, center);
+        MoveWallTowards(wallBack, center);
 
         // Verifica si ya están demasiado cerca
         float xDistance = Vector3.Distance(wallLeft.position, wallRight.position);
@@ -84,10 +93,18 @@ public class TrivialManager : MonoBehaviour
         {
             Debug.Log("¡Has muerto! Las paredes se cerraron demasiado.");
             isActive = false;
-            // Aquí puedes emitir un evento de GameOver o reiniciar la escena
         }
     }
-
+    private Vector3 GetCenterPoint()
+    {
+        Vector3 total = wallLeft.position + wallRight.position + wallFront.position + wallBack.position;
+        return total / 4f;
+    }
+    private void MoveWallTowards(Transform wall, Vector3 target)
+    {
+        Vector3 dir = (target - wall.position).normalized;
+        wall.position += dir * wallMoveStep;
+    }
     private void EndTrivia()
     {
         Debug.Log("Trivia completado");

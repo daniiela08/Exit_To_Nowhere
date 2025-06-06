@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bd7a307ae1f03847be5a233e20858f2, type: 3}
-  m_Name: Question3
+  m_Name: Question6
   m_EditorClassIdentifier: 
-  questionText: "\xBFCuantos agujeros hab\xEDa en el nivel de las palancas?"
+  questionText: "\xBFQue hay detr\xE1s de ti?"
   options:
-  - A. 40
-  - B. 36
-  - C. 24
-  correctIndex: 1
+  - A. Una entidad
+  - B. Nada
+  - C. Una bonita nube
+  correctIndex: 2
