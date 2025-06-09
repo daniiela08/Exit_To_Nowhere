@@ -255,4 +255,8 @@ public class FirstPersonController : MonoBehaviour
     {
         Gizmos.DrawSphere(feet.position, detectionRadius);
     }
+    public bool HasKeyInHand()
+    {
+        return pickUpObject is KeyItem;
+    }
 }

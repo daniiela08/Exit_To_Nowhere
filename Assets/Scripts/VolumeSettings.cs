@@ -25,17 +25,19 @@ public class VolumeSettings : MonoBehaviour
     {
         float volume = musicSlider.value;
         //para convertir el slider en logaritmico. Es decir, coger del 0,0001 pasando por los decimales hasta 1.
+        volume = Mathf.Clamp(volume, 0.0001f, 1f);
         myMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
         //guardar el volumen
-        PlayerPrefs.SetFloat("musicVolume", volume);
+        PlayerPrefs.SetFloat("musicVolume", musicSlider.value);
     }
     public void SetSFXVolume()
     {
         float volume = sfxSlider.value;
         //para convertir el slider en logaritmico. Es decir, coger del 0,0001 pasando por los decimales hasta 1.
+        volume = Mathf.Clamp(volume, 0.0001f, 1f);
         myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
         //guardar el volumen
-        PlayerPrefs.SetFloat("SFXVolume", volume);
+        PlayerPrefs.SetFloat("SFXVolume", sfxSlider.value);
     }
     private void LoadVolume()
     {

@@ -15,6 +15,9 @@ public class EventManagerSO : ScriptableObject
     public event Action OnBuildAreaExited;
     public event Action OnStaircaseBuilt;
 
+    public event Action OnKeyZoneEntered;
+    public event Action OnKeyZoneExited;
+    public event Action OnKeyInserted;
     public void NewInteractable()
     {
         OnNewInteractable?.Invoke();
@@ -31,4 +34,8 @@ public class EventManagerSO : ScriptableObject
     public void EnterBuildArea() => OnBuildAreaEntered?.Invoke();
     public void ExitBuildArea() => OnBuildAreaExited?.Invoke();
     public void StaircaseBuilt() => OnStaircaseBuilt?.Invoke();
+
+    public void KeyZoneEntered() => OnKeyZoneEntered?.Invoke();
+    public void KeyZoneExited() => OnKeyZoneExited?.Invoke();
+    public void KeyInserted() => OnKeyInserted?.Invoke();
 }
