@@ -15,6 +15,8 @@ MonoBehaviour:
   subtitles:
   - id: 0
     subtitleTexts:
-    - Hola esto es una prueba
-    - "Segunda frase que ir\xE1 "
+    - WAKE UP
+    - 'THIS IS A DREAM
+
+'
     timePerSubtitle: 3
