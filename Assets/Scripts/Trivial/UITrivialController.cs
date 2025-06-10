@@ -27,4 +27,12 @@ public class UITrivialController : MonoBehaviour
             answerTexts[i].text = question.options[i];
         }
     }
+    public void ShowFinalMessage()
+    {
+        questionText.text = "Enhorabuena!, dirígete hacia aquí";
+        foreach (var txt in answerTexts)
+        {
+            txt.text = "UP"; 
+        }
+    }
 }

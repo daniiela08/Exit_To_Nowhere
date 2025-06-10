@@ -108,6 +108,14 @@ public class TrivialManager : MonoBehaviour
     private void EndTrivia()
     {
         Debug.Log("Trivia completado");
+
+        var uiDisplay = FindObjectOfType<UITrivialController>();
+        if (uiDisplay != null)
+        {
+            uiDisplay.ShowFinalMessage();
+        }
+
         teleportPortal.SetActive(true);
+        isActive = false;
     }
 }
