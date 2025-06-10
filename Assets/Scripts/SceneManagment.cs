@@ -22,7 +22,12 @@ public class SceneManagment : MonoBehaviour
     }
     public void Jugar()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
+    }
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
     }
     public void MenuPrincipal()
     {

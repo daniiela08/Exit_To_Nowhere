@@ -174,7 +174,7 @@ public class FirstPersonController : MonoBehaviour
             Vector3 movementInput = Quaternion.Euler(0, angleToRotate, 0) * Vector3.forward;
 
             //Se aplica movimiento en dicha dirección.
-            controller.Move(movementInput * movementSpeed * Time.deltaTime);
+            controller.Move(movementInput * movementSpeed * Time.unscaledDeltaTime);
         }
     }
     private void DetectInteractableOrBuildable()

@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Muerte.unity
     guid: 76a5d24cf7dfe7b4ca73132f1f8de758
+  - enabled: 0
+    path: Assets/Scenes/Pruebas.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Scenes/NuevoJuego.unity
+    guid: 45d2dc3f94d5ee940bb9651e41338292
   m_configObjects: {}

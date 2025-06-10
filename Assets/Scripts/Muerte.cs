@@ -10,6 +10,7 @@ public class Muerte : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene(2);
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

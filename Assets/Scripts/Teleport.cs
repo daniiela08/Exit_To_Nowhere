@@ -8,6 +8,8 @@ public class Teleport : MonoBehaviour
     [SerializeField] private Transform teleportTarget;
     [SerializeField] private Image panel;
     [SerializeField] private float fadeDuration;
+    [SerializeField] private int destinoEscenarioIndex; // Nuevo campo
+    [SerializeField] private SceneChunkManager chunkManager; // Nuevo campo
 
     private bool isTeleporting = false;
 
@@ -18,17 +20,24 @@ public class Teleport : MonoBehaviour
             StartCoroutine(TeleportRoutine(other.transform));
         }
     }
+
     private IEnumerator TeleportRoutine(Transform player)
     {
         isTeleporting = true;
 
         yield return StartCoroutine(Fade(1));
 
-        // Desactivar momentáneamente CharacterController
+        // Cambiar escenario activo
+        if (chunkManager != null)
+        {
+            chunkManager.ActivarEscenarioVentana(destinoEscenarioIndex);
+        }
+
         CharacterController controller = player.GetComponent<CharacterController>();
         if (controller) controller.enabled = false;
 
         player.position = teleportTarget.position;
+
 
         if (controller) controller.enabled = true;
 
@@ -36,6 +45,7 @@ public class Teleport : MonoBehaviour
 
         isTeleporting = false;
     }
+
     private IEnumerator Fade(float targetAlpha)
     {
         float t = 0;
@@ -43,7 +53,7 @@ public class Teleport : MonoBehaviour
         float startAlpha = originalColor.a;
         Color newColor = originalColor;
 
-        while(t < fadeDuration)
+        while (t < fadeDuration)
         {
             t += Time.deltaTime;
             float blend = Mathf.Clamp01(t / fadeDuration);
@@ -51,6 +61,7 @@ public class Teleport : MonoBehaviour
             panel.color = newColor;
             yield return null;
         }
+
         newColor.a = targetAlpha;
         panel.color = newColor;
     }
