@@ -1023,9 +1023,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CONTROLES
-
-'
+  m_text: CONTROLS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 424c112fd7251704d860469948d913b5, type: 2}
   m_sharedMaterial: {fileID: -8287606312650640138, guid: 424c112fd7251704d860469948d913b5,
@@ -1236,7 +1234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NIVELES
+  m_text: LEVELS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 424c112fd7251704d860469948d913b5, type: 2}
   m_sharedMaterial: {fileID: -8287606312650640138, guid: 424c112fd7251704d860469948d913b5,
@@ -6147,7 +6145,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: JUGAR
+  m_text: PLAY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 424c112fd7251704d860469948d913b5, type: 2}
   m_sharedMaterial: {fileID: -8287606312650640138, guid: 424c112fd7251704d860469948d913b5,
@@ -6658,7 +6656,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.016922, y: 0, z: 0, w: 0}
+  m_margin: {x: 1.016922, y: 0, z: -0.90632814, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7059,7 +7057,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -211.00005, y: -247.586}
+  m_AnchoredPosition: {x: -211.00005, y: -233}
   m_SizeDelta: {x: 50, y: 39.023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4247499268439373538
@@ -7175,7 +7173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -211.00005, y: -161.736}
+  m_AnchoredPosition: {x: -211.00005, y: -143}
   m_SizeDelta: {x: 50, y: 39.023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4800797274763591606
@@ -7317,7 +7315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -211, y: -77.212}
+  m_AnchoredPosition: {x: -211, y: -57}
   m_SizeDelta: {x: 50, y: 39.023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &6083471913427893276

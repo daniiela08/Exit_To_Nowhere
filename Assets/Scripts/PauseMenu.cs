@@ -8,6 +8,9 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private Canvas pauseMenu;
     [SerializeField] private Canvas mainCanvas;
+
+    [SerializeField] private FirstPersonController playerController;
+
     bool pause;
     void Start()
     {
@@ -36,15 +39,19 @@ public class PauseMenu : MonoBehaviour
         {
             Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
+            pauseMenu.gameObject.SetActive(false);
             mainCanvas.gameObject.SetActive(true);
         }
     }
     public void Continue()
     {
+        pause = false;
+        Time.timeScale = 1f;
+        playerController.ResetMovement();
+        playerController.GetComponent<PlayerInput>().SwitchCurrentActionMap("Player");
         pauseMenu.gameObject.SetActive(false);
         mainCanvas.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1f;
     }
     public void Menu()
     {

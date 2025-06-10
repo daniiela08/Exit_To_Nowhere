@@ -98,6 +98,9 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale <= 0.01f)
+            return;
+
         MoveAndRotate();
         ApplyGravity();
         ApplyHeadBob();
@@ -246,6 +249,11 @@ public class FirstPersonController : MonoBehaviour
     {
         verticalMovement.y += gravityScale * Time.deltaTime;
         controller.Move(verticalMovement * Time.deltaTime);
+    }
+    public void ResetMovement()
+    {
+        verticalMovement = Vector3.zero;
+        input = Vector2.zero;
     }
     private bool IsGrounded()
     {

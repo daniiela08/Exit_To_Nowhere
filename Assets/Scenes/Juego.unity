@@ -9303,7 +9303,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Debes encontrar los escalones para construir la escalera
+  m_text: You must find the steps to build the ladder.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 424c112fd7251704d860469948d913b5, type: 2}
   m_sharedMaterial: {fileID: -8287606312650640138, guid: 424c112fd7251704d860469948d913b5,
@@ -14666,7 +14666,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Suelta la llave para continuar
+  m_text: Drop the key to continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 424c112fd7251704d860469948d913b5, type: 2}
   m_sharedMaterial: {fileID: -8287606312650640138, guid: 424c112fd7251704d860469948d913b5,
@@ -19423,6 +19423,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1830082177}
   mainCanvas: {fileID: 1962395034}
+  playerController: {fileID: 1215274694}
+--- !u!114 &1215274694 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8081082332602259471, guid: ee271b9d4a369a04a9ce929059f39ead,
+    type: 3}
+  m_PrefabInstance: {fileID: 1265324575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79024855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d633a3b6f47bc458f02ad661a314ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1215870767
 PrefabInstance:
   m_ObjectHideFlags: 0
