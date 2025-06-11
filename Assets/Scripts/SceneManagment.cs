@@ -15,7 +15,13 @@ public class SceneManagment : MonoBehaviour
     [SerializeField] private GameObject lvl5;
     [SerializeField] private GameObject lvl6;
     [SerializeField] private GameObject lvl7;
+    [SerializeField] private GameObject fotoBase;
 
+    public void CargarNivel(int nivel)
+    {
+        LevelSelector.SelectLevel(nivel);
+        SceneManager.LoadScene(1); 
+    }
     public void Salir()
     {
         Application.Quit();
@@ -34,6 +40,7 @@ public class SceneManagment : MonoBehaviour
         menuPrincipal.SetActive(true);
         menuNiveles.SetActive(false);
         menuopciones.SetActive(false);
+        fotoBase.SetActive(false);
         lvl1.SetActive(false);
         lvl2.SetActive(false);
         lvl3.SetActive(false);
@@ -47,6 +54,7 @@ public class SceneManagment : MonoBehaviour
         menuPrincipal.SetActive(false);
         menuNiveles.SetActive(false);
         menuopciones.SetActive(true);
+        fotoBase.SetActive(false);
         lvl1.SetActive(false);
         lvl2.SetActive(false);
         lvl3.SetActive(false);
@@ -59,10 +67,12 @@ public class SceneManagment : MonoBehaviour
     {
         menuPrincipal.SetActive(false);
         menuNiveles.SetActive(true);
+        fotoBase.SetActive(true);
         menuopciones.SetActive(false);
     }
     public void Lvl1()
     {
+        fotoBase.SetActive(false);
         lvl1.SetActive(true);
         lvl2.SetActive(false);
         lvl3.SetActive(false);
@@ -73,6 +83,7 @@ public class SceneManagment : MonoBehaviour
     }
     public void Lvl2()
     {
+        fotoBase.SetActive(false);
         lvl1.SetActive(false);
         lvl2.SetActive(true);
         lvl3.SetActive(false);
@@ -83,6 +94,7 @@ public class SceneManagment : MonoBehaviour
     }
     public void Lvl3()
     {
+        fotoBase.SetActive(false);
         lvl1.SetActive(false);
         lvl2.SetActive(false);
         lvl3.SetActive(true);
@@ -93,6 +105,7 @@ public class SceneManagment : MonoBehaviour
     }
     public void Lvl4()
     {
+        fotoBase.SetActive(false);
         lvl1.SetActive(false);
         lvl2.SetActive(false);
         lvl3.SetActive(false);
@@ -103,6 +116,7 @@ public class SceneManagment : MonoBehaviour
     }
     public void Lvl5()
     {
+        fotoBase.SetActive(false);
         lvl1.SetActive(false);
         lvl2.SetActive(false);
         lvl3.SetActive(false);
@@ -113,6 +127,7 @@ public class SceneManagment : MonoBehaviour
     }
     public void Lvl6()
     {
+        fotoBase.SetActive(false);
         lvl1.SetActive(false);
         lvl2.SetActive(false);
         lvl3.SetActive(false);
@@ -123,6 +138,7 @@ public class SceneManagment : MonoBehaviour
     }
     public void Lvl7()
     {
+        fotoBase.SetActive(false);
         lvl1.SetActive(false);
         lvl2.SetActive(false);
         lvl3.SetActive(false);
