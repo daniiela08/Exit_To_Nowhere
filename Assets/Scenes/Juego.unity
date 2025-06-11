@@ -19173,7 +19173,7 @@ MonoBehaviour:
   panel: {fileID: 238370215}
   fadeDuration: 3
   destinoEscenarioIndex: 4
-  chunkManager: {fileID: 1715081239}
+  chunkManager: {fileID: 0}
 --- !u!65 &1165552552
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19530,7 +19530,7 @@ PrefabInstance:
     - target: {fileID: 5411980003564128369, guid: ee271b9d4a369a04a9ce929059f39ead,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 267.087
+      value: 267.51
       objectReference: {fileID: 0}
     - target: {fileID: 5411980003564128369, guid: ee271b9d4a369a04a9ce929059f39ead,
         type: 3}
@@ -19540,7 +19540,7 @@ PrefabInstance:
     - target: {fileID: 5411980003564128369, guid: ee271b9d4a369a04a9ce929059f39ead,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.94
+      value: 13.07
       objectReference: {fileID: 0}
     - target: {fileID: 5411980003564128369, guid: ee271b9d4a369a04a9ce929059f39ead,
         type: 3}
@@ -20720,7 +20720,7 @@ MonoBehaviour:
   panel: {fileID: 238370215}
   fadeDuration: 3
   destinoEscenarioIndex: 3
-  chunkManager: {fileID: 1715081239}
+  chunkManager: {fileID: 0}
 --- !u!65 &1258042991
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28725,6 +28725,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -13.3765135
       objectReference: {fileID: 0}
+    - target: {fileID: 6442718970625737410, guid: 4d73d8dadf1edee4ca8d4868ec54d345,
+        type: 3}
+      propertyPath: angleVision
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6574925498691926023, guid: 4d73d8dadf1edee4ca8d4868ec54d345,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -29724,7 +29729,7 @@ MonoBehaviour:
   panel: {fileID: 238370215}
   fadeDuration: 3
   destinoEscenarioIndex: 2
-  chunkManager: {fileID: 1715081239}
+  chunkManager: {fileID: 0}
 --- !u!65 &1710229303
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30124,7 +30129,7 @@ MonoBehaviour:
   panel: {fileID: 238370215}
   fadeDuration: 3
   destinoEscenarioIndex: 1
-  chunkManager: {fileID: 1715081239}
+  chunkManager: {fileID: 0}
 --- !u!65 &1738092118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36938,7 +36943,7 @@ MonoBehaviour:
   panel: {fileID: 238370215}
   fadeDuration: 3
   destinoEscenarioIndex: 7
-  chunkManager: {fileID: 1715081239}
+  chunkManager: {fileID: 0}
 --- !u!65 &2052834246
 BoxCollider:
   m_ObjectHideFlags: 0
