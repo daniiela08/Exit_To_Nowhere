@@ -11,6 +11,8 @@ public class FirstPersonController : MonoBehaviour
     private float movementSpeed;
     [SerializeField]
     private float gravityScale;
+    [SerializeField]
+    private float terminalVelocity;
 
     [Header("-----Jump-----")]
     [SerializeField]
@@ -247,7 +249,16 @@ public class FirstPersonController : MonoBehaviour
     }
     private void ApplyGravity()
     {
-        verticalMovement.y += gravityScale * Time.deltaTime;
+        if (IsGrounded() && verticalMovement.y < 0)
+        {
+            verticalMovement.y = -2f; // Una pequeña fuerza para mantener el personaje pegado al suelo
+        }
+        else
+        {
+            verticalMovement.y += Physics.gravity.y * gravityScale * Time.deltaTime;
+            verticalMovement.y = Mathf.Max(verticalMovement.y, terminalVelocity); // Limita caída
+        }
+
         controller.Move(verticalMovement * Time.deltaTime);
     }
     public void ResetMovement()
